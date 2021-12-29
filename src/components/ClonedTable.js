@@ -71,7 +71,6 @@ const Row = (props) => {
       <StyledTableRow
         {...row.getRowProps()}
         hover
-        onClick={(event) => handleClick(event, row.id)}
         role="checkbox"
         aria-checked={isItemSelected}
         tabIndex={-1}
@@ -90,6 +89,7 @@ const Row = (props) => {
                 <Checkbox
                   checked={isItemSelected}
                   inputProps={{ "aria-labelledby": labelId }}
+                  onClick={(event) => handleClick(event, row.id)}
                 />
               </TableCell>
             );
