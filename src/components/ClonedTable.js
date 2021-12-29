@@ -174,7 +174,7 @@ function ClonedTable({ columns, data }) {
     setPage(0);
   };
 
-  console.log(data, rows);
+  // console.log(data, rows);
   return (
     <React.Fragment>
       <TableContainer component={Paper}>
@@ -232,7 +232,7 @@ function ClonedTable({ columns, data }) {
               prepareRow(row);
               const isItemSelected = isSelected(row.id);
               const labelId = `enhanced-table-checkbox-${index}`;
-              console.log(row);
+              // console.log(row);
               return (
                 <Row
                   key={row.id}

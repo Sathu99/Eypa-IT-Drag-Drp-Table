@@ -269,7 +269,7 @@ const SelectionTable = ({ columns, data }) => {
     headerGroups,
     prepareRow,
     rows,
-    state,
+    // state,
     globalFilter,
     setGlobalFilter,
   } = useTable(
@@ -361,7 +361,7 @@ const SelectionTable = ({ columns, data }) => {
     );
   }, [clonedRows]);
 
-  console.log(selected, clonedRows, clonedData, rows, state);
+  // console.log(selected, clonedRows, clonedData, rows, state);
   return (
     <React.Fragment>
       <div className={classes.body}>

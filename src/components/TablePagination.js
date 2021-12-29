@@ -38,20 +38,22 @@ function TablePaginationActions(props) {
 
   return (
     <div className={classes.root}>
-      <Tooltip title="First Page" open={page !== 0}>
+      <Tooltip title="First Page">
         <IconButton
           onClick={handleFirstPageButtonClick}
           disabled={page === 0}
           aria-label="first page"
+          component="div"
         >
           {theme.direction === "rtl" ? <LastPageIcon /> : <FirstPageIcon />}
         </IconButton>
       </Tooltip>
-      <Tooltip title="Previous Page" open={page !== 0}>
+      <Tooltip title="Previous Page">
         <IconButton
           onClick={handleBackButtonClick}
           disabled={page === 0}
           aria-label="previous page"
+          component="div"
         >
           {theme.direction === "rtl" ? (
             <KeyboardArrowRight />
@@ -60,11 +62,12 @@ function TablePaginationActions(props) {
           )}
         </IconButton>
       </Tooltip>
-      <Tooltip title="Next Page" open={page !== 0}>
+      <Tooltip title="Next Page">
         <IconButton
           onClick={handleNextButtonClick}
           disabled={page >= Math.ceil(count / rowsPerPage) - 1}
           aria-label="next page"
+          component="div"
         >
           {theme.direction === "rtl" ? (
             <KeyboardArrowLeft />
@@ -73,11 +76,12 @@ function TablePaginationActions(props) {
           )}
         </IconButton>
       </Tooltip>
-      <Tooltip title="Last Page" open={page !== 0}>
+      <Tooltip title="Last Page">
         <IconButton
           onClick={handleLastPageButtonClick}
           disabled={page >= Math.ceil(count / rowsPerPage) - 1}
           aria-label="last page"
+          component="div"
         >
           {theme.direction === "rtl" ? <FirstPageIcon /> : <LastPageIcon />}
         </IconButton>
