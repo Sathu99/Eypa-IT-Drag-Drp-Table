@@ -1,24 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import SelectionTable from "./components/SelectionTable";
+import makeData from "./components/makeData";
+import React from "react";
 
 function App() {
+  const columns = React.useMemo(
+    () => [
+      {
+        Header: "Country",
+        accessor: "country",
+        id: "country",
+        numeric: false,
+        disablePadding: false,
+        disableFilters: true,
+      },
+      {
+        Header: "Code",
+        accessor: "code",
+        id: "code",
+        numeric: false,
+        disablePadding: false,
+        disableFilters: true,
+      },
+      {
+        Header: "Currency",
+        accessor: "currency",
+        id: "currency",
+        numeric: false,
+        disablePadding: false,
+        disableFilters: true,
+      },
+    ],
+    []
+  );
+  const data = React.useMemo(() => makeData(5, 4, 3, 2, 1), []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <SelectionTable columns={columns} data={data} />
+    </>
   );
 }
 
