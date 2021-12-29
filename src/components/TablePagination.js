@@ -38,7 +38,7 @@ function TablePaginationActions(props) {
 
   return (
     <div className={classes.root}>
-      <Tooltip title="First Page">
+      <Tooltip title="First Page" open={page !== 0}>
         <IconButton
           onClick={handleFirstPageButtonClick}
           disabled={page === 0}
@@ -47,7 +47,7 @@ function TablePaginationActions(props) {
           {theme.direction === "rtl" ? <LastPageIcon /> : <FirstPageIcon />}
         </IconButton>
       </Tooltip>
-      <Tooltip title="Previous Page">
+      <Tooltip title="Previous Page" open={page !== 0}>
         <IconButton
           onClick={handleBackButtonClick}
           disabled={page === 0}
@@ -60,7 +60,7 @@ function TablePaginationActions(props) {
           )}
         </IconButton>
       </Tooltip>
-      <Tooltip title="Next Page">
+      <Tooltip title="Next Page" open={page !== 0}>
         <IconButton
           onClick={handleNextButtonClick}
           disabled={page >= Math.ceil(count / rowsPerPage) - 1}
@@ -73,7 +73,7 @@ function TablePaginationActions(props) {
           )}
         </IconButton>
       </Tooltip>
-      <Tooltip title="Last Page">
+      <Tooltip title="Last Page" open={page !== 0}>
         <IconButton
           onClick={handleLastPageButtonClick}
           disabled={page >= Math.ceil(count / rowsPerPage) - 1}

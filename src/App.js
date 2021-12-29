@@ -32,7 +32,7 @@ function App() {
     ],
     []
   );
-  const data = React.useMemo(() => makeData(5, 4, 3, 2, 1), []);
+  const data = React.useMemo(() => makeData(6, 4, 3, 2, 1), []);
   return (
     <>
       <SelectionTable columns={columns} data={data} />
